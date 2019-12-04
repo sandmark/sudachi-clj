@@ -1,15 +1,14 @@
 (ns sudachi-clj.core-test
   (:require [clojure.test :as t]
             [fudje.sweet :as fs]
-            [sudachi-clj.core :as sut]
-            [sudachi-clj.system :as sys]))
+            [sudachi-clj.core :as sut]))
 
 (defn- setup-system-fixture [f]
   (try
-    (sys/start)
+    (sut/start)
     (f)
     (finally
-      (sys/stop))))
+      (sut/stop))))
 
 (t/use-fixtures :once setup-system-fixture)
 
