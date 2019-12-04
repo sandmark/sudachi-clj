@@ -44,6 +44,3 @@
 (defn analyze [text & {:keys [mode] :or {mode :c}}]
   (when-let [f (get system ::analyze)]
     (f text mode)))
-
-(defn noun? [[_ [part]]]
-  (= "名詞" part))
