@@ -7,4 +7,5 @@
                  [integrant "0.7.0"]
                  [org.clojure/data.json "0.2.7"]
                  [aero "1.1.3"]]
-  :repl-options {:init-ns sudachi-clj.core})
+  :repl-options {:init-ns sudachi-clj.core}
+  :profiles {:dev {:dependencies [[fudje "0.9.7"]]}})
