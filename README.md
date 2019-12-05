@@ -4,6 +4,27 @@ A Clojure wrapper library for [Sudachi](https://github.com/WorksApplications/Sud
 
 ## Usage
 
+### Quick Start
+If you are using Leiningen, clone this repository to `your-project/checkouts/` directory. For example, your project files should look like this:
+
+```
+your-project/
+  project.clj
+  src/
+  checkouts/
+    sudachi-clj/
+```
+
+With Leiningen's [checkout dependencies](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#checkout-dependencies) feature, you can define the dependencies in your project.clj as follows:
+
+```
+:dependencies [[org.clojure/clojure "1.10.1"]
+               [sudachi-clj "0.1.0"]
+                ...]
+```
+
+After that, you can load this library like `(require [sudachi-clj.core: as sudachi])`.
+
 ### Sudachi Dictionary
 The morphological analysis engine requires a Sudachi dictionary, which can be downloaded from [here](https://github.com/WorksApplications/SudachiDict).
 
