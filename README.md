@@ -19,17 +19,17 @@ lein repl
 sudachi-clj.core=>
 ```
 
-In order to perform morphological analysis, you must activate the Sudachi system by calling `sudachi-clj.system/start` function.
+In order to perform morphological analysis, you must activate the Sudachi system by calling `sudachi-clj.core/start` function.
 
 ```
-sudachi-clj.core=> (sudachi-clj.system/start)
+sudachi-clj.core=> (start)
 :started
 ```
 
 Or you can manually specify the location of the Sudachi dictionary, instead of setting the environment variable `SUDACHI_DICTIONARY_FILE`.
 
 ```
-sudachi-clj.core=> (sudachi-clj.system/start :dictionary-file "/path/to/system_core.dic")
+sudachi-clj.core=> (start :dictionary-file "/path/to/system_core.dic")
 :started
 ```
 
@@ -56,17 +56,10 @@ sudachi-clj.core=> (analyze "宇宙、生命、そして万物についての究
 
 Note that the `sudachi-clj.core/analyze` function returns nil if the system is not started or stopped.
 
-Anyway, how many nouns are included in this sentence? sudachi-clj has an optional function `sudachi-clj.core/noun?` that determines whether it is a noun or not.
+After completing the morphological analysis, it's recommended to shut down the system to free resources, using `sudachi-clj.core/stop`.
 
 ```
-sudachi-clj.core=> (->> *1 (filter noun?) count)
-6
-```
-
-After completing the morphological analysis, it's recommended to shut down the system to free resources, using `sudachi-clj.system/stop`.
-
-```
-sudachi-clj.core=> (sudachi-clj.system/stop)
+sudachi-clj.core=> (stop)
 :stopped
 ```
 
